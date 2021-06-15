@@ -1540,6 +1540,9 @@ class ErrorMapper(object):
                 setattr(dest, name, cls.mgmt_exc_wrap(method))
         return dest
 
+CouchbaseNetworkError = NetworkException
+CouchbaseTransientError = CouchbaseTransientException
+HTTPError = HTTPException
 
 _EXCTYPE_MAP = {
     C.PYCBC_EXC_ARGUMENTS:  InvalidArgumentException,

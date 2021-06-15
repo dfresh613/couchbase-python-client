@@ -24,6 +24,7 @@ from couchbase.options import UnsignedInt64
 from couchbase_core import iterable_wrapper, JSON
 from couchbase.exceptions import QueryException
 from couchbase_core.n1ql import N1QLRequest
+from couchbase_core.n1ql import STATEMENT_PLUS
 
 
 class QueryStatus(enum.Enum):
@@ -163,3 +164,5 @@ class QueryResult(iterable_wrapper(N1QLRequest)):
         except Exception as e:
             raise QueryException.pyexc(
                 "Not able to get result in nanoseconds", inner=e)
+
+N1QLQuery = N1QLRequest
